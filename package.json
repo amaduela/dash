@@ -1,7 +1,7 @@
 {
   "name": "metrobus",
   "version": "1.0.0",
-  "description": "Metro Dashboards",
+  "description": "Metro Dashboard",
   "scripts": {
     "postinstall": "./node_modules/bower/bin/bower install" 
   },
