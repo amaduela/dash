@@ -1,0 +1,109 @@
+<!-- START TOPBAR -->
+<div class='logo-area'>
+</div>
+<div class='quick-area'>
+    <div class='pull-left slantit'>
+        <ul class="info-menu left-links list-inline list-unstyled">
+            <li class="sidebar-toggle-wrap">
+                <a href data-toggle="sidebar" class="sidebar_toggle" ng-click="app.settings.menuFolded = !app.settings.menuFolded; menuChatToggle('menu',app.settings.menuFolded) ">
+                    <i class="material-icons">menu</i>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="pull-left pagetitle">
+        <span class='line'></span>
+        <h1>Payment Gateway</h1>
+        <div></div>
+    </div>
+    <div class="pull-left quickleft" style=''>
+        <ul class="info-menu right-links list-inline list-unstyled">
+            <li class="dropdown tab " uib-dropdown>
+                <a href class="dropdown-toggle toggle" uib-dropdown-toggle>
+                    <i class="material-icons">notifications</i>
+                    <span class="badge badge-accent">3</span>
+                </a>
+                <ul class="dropdown-menu  notifications animated fadeIn">
+                    <li class="total">
+                        <span class="small">
+                                Tem <strong>3</strong> novas notificações.
+                                <a href="javascript:;" class="pull-right">Marcar todas como lidas</a>
+                            </span>
+                    </li>
+                    <li ng-controller="NotificationsDropDownCtrl" class="list">
+                        <perfect-scrollbar wheel-propagation="true" suppress-scroll-x="true" min-scrollbar-length="20" class='ps-scrollbar'>
+                            <ul class="dropdown-menu-list list-unstyled">
+                                <li class="{{notification.read ? 'read' : 'unread'}} {{notification.status}}" ng-repeat="notification in notifications">
+                                    <!-- available: success, warning, info, error -->
+                                    <a href="javascript:;">
+                                        <div class="notice-icon">
+                                            <i class="material-icons">{{notification.statusicon}}</i>
+                                        </div>
+                                        <div>
+                                            <span class="name">
+                                                    <h4>{{notification.message}}</h4>
+                                                    <span class="time small">{{notification.time}}</span>
+                                            </span>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </perfect-scrollbar>
+                    </li>
+                    <li class="external">
+                        <a href="javascript:;">
+                            <span>Ver todas notificações</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="menu-profile-toggle tab">
+                <a href class="profile_toggle" ng-click="app.settings.menuProfile = !app.settings.menuProfile ">
+                    <i class="material-icons">person</i>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class='pull-right quickright'>
+        <ul class="info-menu right-links list-inline list-unstyled">
+            
+            <li class="dropdown profile tab" uib-dropdown>
+                <a href class="dropdown-toggle toggle" uib-dropdown-toggle>
+                    <img ng-if="app.type == 'general'" src="data/profile/profile.png" alt="user-image" class="img-circle img-inline">
+                    <img ng-if="app.type == 'hospital'" src="data/profile/profile-hospital.jpg" alt="user-image" class="img-circle img-inline">
+                    <img ng-if="app.type == 'university'" src="data/profile/profile-university.jpg" alt="user-image" class="img-circle img-inline">
+                    <img ng-if="app.type == 'crm'" src="data/profile/profile-crm.jpg" alt="user-image" class="img-circle img-inline">
+                    <img ng-if="app.type == 'music'" src="data/profile/profile-music.jpg" alt="user-image" class="img-circle img-inline">
+                    <img ng-if="app.type == 'blog'" src="data/profile/profile-blog.jpg" alt="user-image" class="img-circle img-inline">
+                    <img ng-if="app.type == 'socialmedia'" src="data/profile/profile-socialmedia.jpg" alt="user-image" class="img-circle img-inline">
+                     <img ng-if="app.type == 'ecommerce'" src="data/profile/profile-ecommerce.jpg" alt="user-image" class="img-circle img-inline">
+                    <img ng-if="app.type == 'freelancing'" src="data/profile/profile-freelancing.jpg" alt="user-image" class="img-circle img-inline">
+                    <span class="profile-status available"></span>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-right profile animated fadeIn">
+                    <li>
+                        <a ui-sref="app.dashboard">
+                            <i class="material-icons">settings</i> Definições
+                        </a>
+                    </li>
+                    <li>
+                        <a ui-sref="app.ui.profile">
+                            <i class="material-icons">person</i> Perfil
+                        </a>
+                    </li>
+                    <li>
+                        <a ui-sref="app.ui.faq">
+                            <i class="material-icons">help</i> Ajuda
+                        </a>
+                    </li>
+                    <li class="last">
+                        <a ui-sref="access.login">
+                            <i class="material-icons">lock</i> Sair
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+<!-- END TOPBAR -->
